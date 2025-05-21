@@ -1,5 +1,5 @@
-const API_BASE = "http://localhost:5000/api";
-
+// const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://masterdealer.onrender.com/api";
 async function checkHealth() {
   try {
     const res = await fetch(`${API_BASE}/health`);
