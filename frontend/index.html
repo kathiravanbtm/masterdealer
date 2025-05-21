@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MasterDealer Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>MasterDealer Dashboard</h1>
+
+  <button onclick="showSection('filter-section')">Filter Dealers</button>
+<button onclick="showSection('dealer-list-section')">Dealer List</button>
+<button onclick="showSection('upload-section')">Upload CSV</button>
+<button onclick="showSection('gstin-section')">Find Dealer by GSTIN</button>
+<button onclick="showSection('others-section')">Other districts</button>
+
+  <div id="status">Checking API...</div>
+
+<div id="filter-section" style="display:none;">
+  <h2>Filter Dealers</h2>
+
+
+  <div class="filter-row">
+    <div class="filter-group">
+      <input type="text" id="filterDistrictInput" placeholder="Enter district..." autocomplete="off" />
+      <div id="districtSuggestions" class="autocomplete-list"></div>
+    </div>
+
+    <div class="filter-group">
+      <input type="text" id="filterNagarInput" placeholder="Nagar" autocomplete="off" />
+      <div id="nagarSuggestions" class="autocomplete-list"></div>
+    </div>
+
+    <div class="filter-group">
+      <input type="text" id="filterStreetInput" placeholder="Street" autocomplete="off" />
+      <div id="streetSuggestions" class="autocomplete-list"></div>
+    </div>
+
+    <div class="filter-group">
+      <input type="text" id="filterPincode" placeholder="Pincode" />
+    </div>
+
+    <div class="filter-group" style="flex: 0 0 auto;">
+      <button onclick="filterDealers()">Filter</button>
+        <button onclick="exportByFilters()">Export</button>
+
+    </div>
+  </div>
+
+  <div style="max-width: 100%; overflow-x: auto;">
+    <table id="dealer-tables" border="1"></table>
+  </div>
+</div>
+  
+  <div id="dealer-list-section">
+    
+      <h2>Dealer List</h2>
+      <button onclick="loadDealers()">Load Dealers</button>
+      <table id="dealer-table" border="1"></table>
+  </div>
+  
+
+  <table id="dealer-table" border="1"></table>
+
+
+<div id="upload-section" style="display:none;">
+
+    <h2>Upload CSV</h2>
+    <input type="file" id="csvFile" />
+    <button onclick="uploadCSV()">Upload</button>
+  
+</div>
+
+
+
+<div id="gstin-section" style="display:none;">
+  <h2>Find Dealer by GSTIN</h2>
+  <input type="text" id="gstinInput" placeholder="Enter GSTIN" />
+  <button onclick="findDealer()">Search</button>
+  <button onclick="exportByGstin()">Export</button>
+  
+  <div id="dealer-info" style="margin-top:20px;"></div>
+</div>
+
+<div id ="others-section" style="display:none;">
+  <h2>Other Districts</h2>
+
+  <button onclick="otherdistricts()">Load Dealers</button>
+  <button onclick="exportOtherDistricts()">Export</button>
+  <table id="other-districts-table" border="1"></table>
+
+</div>
+
+  <script src="script.js"></script>
+  <script src="filter.js"></script>
+  <script src="hide.js"></script>
+  <script src="suggestion.js"></script>
+  <script src="exportexcel.js"></script>
+</body>
+</html>

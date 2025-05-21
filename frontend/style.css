@@ -1,0 +1,139 @@
+/* style.css */
+
+/* Reset default styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 5px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+input[type="text"],
+input[type="file"] {
+  padding: 8px;
+  width: 100%;
+  max-width: 250px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#status {
+  margin: 10px 0 20px;
+  padding: 10px;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  color: #856404;
+  border-radius: 4px;
+}
+
+#filter-section,
+#dealer-list-section,
+#upload-section,
+#gstin-section,
+#others-section {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+table th {
+  background-color: #f1f1f1;
+  font-weight: bold;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+
+.autocomplete-list {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  max-height: 150px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.autocomplete-list div {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.autocomplete-list div:hover {
+  background-color: #eaeaea;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 768px) {
+  .filter-row {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  input[type="text"],
+  input[type="file"] {
+    max-width: 100%;
+  }
+}
